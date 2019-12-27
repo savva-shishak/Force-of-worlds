@@ -1,18 +1,22 @@
 package ru.nuclearreactor.forceofworlds.pages
 
 import ru.nuclearreactor.forceofworlds.entities.Href
-import ru.nuclearreactor.forceofworlds.entities.Href.Companion.href
 import ru.nuclearreactor.forceofworlds.entities.Page
+import ru.nuclearreactor.forceofworlds.pages.shop.Shop
 
 class StartPage: Page {
 
-    var textContent = "Добро пожаловать в Кузницу миров"
+    var count = 0
 
-    override fun getText(): String = textContent
+    override fun getText(): String {
+        return "Добро пожаловать в Кузницу миров \n" +
+                "Счётчик: ${count++}"
+    }
 
     override fun getHrefs(): Array<Href> {
         return arrayOf(
-            href("Тестовая страница 1", TestPage::class.java)
+            Href("Ваш профиль", ProfileGamer()),
+            Href("Магазин", Shop())
         )
     }
 }

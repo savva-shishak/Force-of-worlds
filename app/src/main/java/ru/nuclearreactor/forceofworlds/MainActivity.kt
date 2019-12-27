@@ -2,13 +2,10 @@ package ru.nuclearreactor.forceofworlds
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import ru.nuclearreactor.forceofworlds.entities.Href
-import ru.nuclearreactor.forceofworlds.entities.Page
 import ru.nuclearreactor.forceofworlds.models.ViewPage
 
 class MainActivity : Activity() {
@@ -29,6 +26,7 @@ class MainActivity : Activity() {
 
     fun setHrefs(hrefs: Array<Href>) {
         val hrefsView = findViewById<LinearLayout>(R.id.appHrefsView)
+
         hrefsView.removeAllViews()
 
         for (href in hrefs) {
@@ -37,11 +35,12 @@ class MainActivity : Activity() {
     }
 
     fun createButton(href: Href): Button {
-        val button: Button = Button(this)
+        val button = Button(this)
 
         button.setText(href.label)
+        button.setEnabled(href.enable)
         button.setOnClickListener({
-            ViewPage.setPage(href.script())
+            ViewPage.set(href.script())
         })
 
         return button

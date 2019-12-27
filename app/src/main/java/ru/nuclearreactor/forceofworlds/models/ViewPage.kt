@@ -14,7 +14,7 @@ class ViewPage {
             }
         }
 
-        public fun setPage(newPage: Page) {
+        public fun set(newPage: Page) {
             this.page = newPage
             onUpdate()
         }
