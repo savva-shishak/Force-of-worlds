@@ -1,6 +1,5 @@
 package ru.nuclearreactor.forceofworlds.entities
 
-import ru.nuclearreactor.forceofworlds.pages.Pages
 import ru.nuclearreactor.forceofworlds.pages.Pages.Companion.get
 
 class Href {

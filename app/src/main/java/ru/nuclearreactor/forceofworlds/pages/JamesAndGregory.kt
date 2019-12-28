@@ -3,8 +3,10 @@ package ru.nuclearreactor.forceofworlds.pages
 import ru.nuclearreactor.forceofworlds.entities.Href
 import ru.nuclearreactor.forceofworlds.entities.Page
 
-class NotFound: Page {
-    override fun getText(): String = "Страница не найденна"
+class JamesAndGregory: Page {
+    override fun getHrefs() = arrayOf(
+        Href("", this)
+    )
 
-    override fun getHrefs(): Array<Href> = arrayOf()
+    override fun getText() = ""
 }
